@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>flights_crawler module &mdash; Route Networks  documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="graph_dynamics module" href="graph_dynamics.html" />
+    <link rel="prev" title="draw_map module" href="draw_map.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> Route Networks
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">18-755-project</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="connector.html">connector module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_models.html">data_models package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="draw_map.html">draw_map module</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">flights_crawler module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#flights_crawler.Crawler"><code class="docutils literal notranslate"><span class="pre">Crawler</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#flights_crawler.Crawler.clean_up"><code class="docutils literal notranslate"><span class="pre">Crawler.clean_up()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#flights_crawler.Crawler.pause"><code class="docutils literal notranslate"><span class="pre">Crawler.pause()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#flights_crawler.Crawler.run"><code class="docutils literal notranslate"><span class="pre">Crawler.run()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#flights_crawler.Crawler.save_to_db"><code class="docutils literal notranslate"><span class="pre">Crawler.save_to_db()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#flights_crawler.Crawler.scrape_page"><code class="docutils literal notranslate"><span class="pre">Crawler.scrape_page()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#flights_crawler.Field"><code class="docutils literal notranslate"><span class="pre">Field</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="graph_dynamics.html">graph_dynamics module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="load_airports.html">load_airports module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="load_city_data.html">load_city_data module</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Route Networks</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">18-755-project</a></li>
+      <li class="breadcrumb-item active">flights_crawler module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/flights_crawler.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-flights_crawler">
+<span id="flights-crawler-module"></span><h1>flights_crawler module<a class="headerlink" href="#module-flights_crawler" title="Permalink to this heading"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="flights_crawler.Crawler">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">flights_crawler.</span></span><span class="sig-name descname"><span class="pre">Crawler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">aircraft_type</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#flights_crawler.Crawler" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="flights_crawler.Crawler.clean_up">
+<span class="sig-name descname"><span class="pre">clean_up</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flights_crawler.Crawler.clean_up" title="Permalink to this definition"></a></dt>
+<dd><p>Close all connections</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="flights_crawler.Crawler.pause">
+<span class="sig-name descname"><span class="pre">pause</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flights_crawler.Crawler.pause" title="Permalink to this definition"></a></dt>
+<dd><p>pause the process for a random number of seconds</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="flights_crawler.Crawler.run">
+<span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flights_crawler.Crawler.run" title="Permalink to this definition"></a></dt>
+<dd><p>Main Cralwing Procedure</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="flights_crawler.Crawler.save_to_db">
+<span class="sig-name descname"><span class="pre">save_to_db</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flights_crawler.Crawler.save_to_db" title="Permalink to this definition"></a></dt>
+<dd><p>parse scraped data and save to database</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="flights_crawler.Crawler.scrape_page">
+<span class="sig-name descname"><span class="pre">scrape_page</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">page_source</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#flights_crawler.Crawler.scrape_page" title="Permalink to this definition"></a></dt>
+<dd><p>read all useful information from the given html page
+return the string of hyper-link to the next page. None if no next page is found</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="flights_crawler.Field">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">flights_crawler.</span></span><span class="sig-name descname"><span class="pre">Field</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ident</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">typ</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">origin</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dest</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">depart</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">est_arrive</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">est_enroute</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#flights_crawler.Field" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>fields of interest to be collected from the data source</p>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="draw_map.html" class="btn btn-neutral float-left" title="draw_map module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="graph_dynamics.html" class="btn btn-neutral float-right" title="graph_dynamics module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Zixuan Chen, Mujing Wang.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

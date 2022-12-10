@@ -1,0 +1,45 @@
+data\_models package
+====================
+
+Submodules
+----------
+
+data\_models.Airport module
+---------------------------
+
+.. automodule:: data_models.Airport
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+data\_models.City module
+------------------------
+
+.. automodule:: data_models.City
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+data\_models.Route module
+-------------------------
+
+.. automodule:: data_models.Route
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+data\_models.abstract module
+----------------------------
+
+.. automodule:: data_models.abstract
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: data_models
+   :members:
+   :undoc-members:
+   :show-inheritance:

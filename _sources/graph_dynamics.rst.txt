@@ -1,0 +1,7 @@
+graph\_dynamics module
+======================
+
+.. automodule:: graph_dynamics
+   :members:
+   :undoc-members:
+   :show-inheritance:

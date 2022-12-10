@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>data_models package &mdash; Route Networks  documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="draw_map module" href="draw_map.html" />
+    <link rel="prev" title="connector module" href="connector.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> Route Networks
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">18-755-project</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="connector.html">connector module</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">data_models package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-data_models.Airport">data_models.Airport module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#data_models.Airport.LargeAirport"><code class="docutils literal notranslate"><span class="pre">LargeAirport</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-data_models.City">data_models.City module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#data_models.City.City"><code class="docutils literal notranslate"><span class="pre">City</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-data_models.Route">data_models.Route module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#data_models.Route.RouteNet"><code class="docutils literal notranslate"><span class="pre">RouteNet</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-data_models.abstract">data_models.abstract module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#data_models.abstract.BaseModel"><code class="docutils literal notranslate"><span class="pre">BaseModel</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-data_models">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="draw_map.html">draw_map module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="flights_crawler.html">flights_crawler module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="graph_dynamics.html">graph_dynamics module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="load_airports.html">load_airports module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="load_city_data.html">load_city_data module</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Route Networks</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">18-755-project</a></li>
+      <li class="breadcrumb-item active">data_models package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/data_models.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="data-models-package">
+<h1>data_models package<a class="headerlink" href="#data-models-package" title="Permalink to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-data_models.Airport">
+<span id="data-models-airport-module"></span><h2>data_models.Airport module<a class="headerlink" href="#module-data_models.Airport" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="data_models.Airport.LargeAirport">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">data_models.Airport.</span></span><span class="sig-name descname"><span class="pre">LargeAirport</span></span><a class="headerlink" href="#data_models.Airport.LargeAirport" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#data_models.abstract.BaseModel" title="data_models.abstract.BaseModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseModel</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="data_models.Airport.LargeAirport.city_from_gps_code">
+<span class="sig-name descname"><span class="pre">city_from_gps_code</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gps_code</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#data_models.Airport.LargeAirport.city_from_gps_code" title="Permalink to this definition"></a></dt>
+<dd><p>get city info from the gps-city mapping.</p>
+<p>return (city_name, latitude, longitude)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="data_models.Airport.LargeAirport.get_gps_city_mapping">
+<span class="sig-name descname"><span class="pre">get_gps_city_mapping</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#data_models.Airport.LargeAirport.get_gps_city_mapping" title="Permalink to this definition"></a></dt>
+<dd><p>map gps code to city name, latitude and longitude.</p>
+<p>return a dictionary of such mapping</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-data_models.City">
+<span id="data-models-city-module"></span><h2>data_models.City module<a class="headerlink" href="#module-data_models.City" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="data_models.City.City">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">data_models.City.</span></span><span class="sig-name descname"><span class="pre">City</span></span><a class="headerlink" href="#data_models.City.City" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#data_models.abstract.BaseModel" title="data_models.abstract.BaseModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseModel</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="data_models.City.City.get_gdp_mapping">
+<span class="sig-name descname"><span class="pre">get_gdp_mapping</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#data_models.City.City.get_gdp_mapping" title="Permalink to this definition"></a></dt>
+<dd><p>map city name to city GDP.</p>
+<p>return a dictionary of such mapping</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="data_models.City.City.get_population_mapping">
+<span class="sig-name descname"><span class="pre">get_population_mapping</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#data_models.City.City.get_population_mapping" title="Permalink to this definition"></a></dt>
+<dd><p>map city name to city population.</p>
+<p>return a dictionary of such mapping</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-data_models.Route">
+<span id="data-models-route-module"></span><h2>data_models.Route module<a class="headerlink" href="#module-data_models.Route" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="data_models.Route.RouteNet">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">data_models.Route.</span></span><span class="sig-name descname"><span class="pre">RouteNet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">aircraft_type</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#data_models.Route.RouteNet" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#data_models.abstract.BaseModel" title="data_models.abstract.BaseModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseModel</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="data_models.Route.RouteNet.add_links">
+<span class="sig-name descname"><span class="pre">add_links</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">edges</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Iterable</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#data_models.Route.RouteNet.add_links" title="Permalink to this definition"></a></dt>
+<dd><p>Rebuild the graph by adding links using a edgelist containing edge information.</p>
+<p>&#64;param edges: a list of edges. Each edge should be a tuple of length 6:
+(origin_city, destination_city, origin_latitue, origin_longitude, destination_latitue, destination_longitude)</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="data_models.Route.RouteNet.clustering">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">clustering</span></span><a class="headerlink" href="#data_models.Route.RouteNet.clustering" title="Permalink to this definition"></a></dt>
+<dd><p>Average clustering coefficient of the network</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="data_models.Route.RouteNet.copy">
+<span class="sig-name descname"><span class="pre">copy</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#data_models.Route.RouteNet.copy" title="Permalink to this definition"></a></dt>
+<dd><p>return a deep copy of the current network</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="data_models.Route.RouteNet.directed_graph">
+<span class="sig-name descname"><span class="pre">directed_graph</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DiGraph</span></span></span><a class="headerlink" href="#data_models.Route.RouteNet.directed_graph" title="Permalink to this definition"></a></dt>
+<dd><p>get the instance of nx.DiGraph object</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="data_models.Route.RouteNet.get_betweeness_centrality_ranking">
+<span class="sig-name descname"><span class="pre">get_betweeness_centrality_ranking</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="headerlink" href="#data_models.Route.RouteNet.get_betweeness_centrality_ranking" title="Permalink to this definition"></a></dt>
+<dd><p>calculate the betweenness centrality of all nodes, ranked in descending order.</p>
+<p>return a pandas.DataFrame with columns [‘City’, ‘Betweenness Centrality’]</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="data_models.Route.RouteNet.get_components">
+<span class="sig-name descname"><span class="pre">get_components</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#data_models.Route.RouteNet.get_components" title="Permalink to this definition"></a></dt>
+<dd><p>find all components in the network, ranked by component size in ascending order.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="data_models.Route.RouteNet.get_degree_centrality_ranking">
+<span class="sig-name descname"><span class="pre">get_degree_centrality_ranking</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="headerlink" href="#data_models.Route.RouteNet.get_degree_centrality_ranking" title="Permalink to this definition"></a></dt>
+<dd><p>calculate the degree centrality of all nodes, ranked in descending order.</p>
+<p>return a pandas.DataFrame with columns [‘City’, ‘Degree Centrality’]</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="data_models.Route.RouteNet.get_frequency_ranking">
+<span class="sig-name descname"><span class="pre">get_frequency_ranking</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="headerlink" href="#data_models.Route.RouteNet.get_frequency_ranking" title="Permalink to this definition"></a></dt>
+<dd><p>calculate the frequency ranking for each route in descending order.
+Route is defined as a pair of origin city and destination city.
+From city A to city B and from city B to city A are considered the same route here,
+even though they are counted separately, the maximum will be used as the frequency of the route.</p>
+<p>return a pandas.DataFrame with columns [‘origin_city’, ‘destination_city’, ‘count’].</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="data_models.Route.RouteNet.get_properties">
+<span class="sig-name descname"><span class="pre">get_properties</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="headerlink" href="#data_models.Route.RouteNet.get_properties" title="Permalink to this definition"></a></dt>
+<dd><p>calculate the network properties.</p>
+<p>return a pandas.DataFrame with columns of 10 interested properties.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="data_models.Route.RouteNet.get_shortest_path_length">
+<span class="sig-name descname"><span class="pre">get_shortest_path_length</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="headerlink" href="#data_models.Route.RouteNet.get_shortest_path_length" title="Permalink to this definition"></a></dt>
+<dd><p>calculate the shortest path length.</p>
+<p>return a 1D numpy.ndarray of all the path length</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="data_models.Route.RouteNet.great_circle_distance">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">great_circle_distance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lon1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lat1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lon2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lat2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#data_models.Route.RouteNet.great_circle_distance" title="Permalink to this definition"></a></dt>
+<dd><p>Calculate the great circle distance between two coordinates.</p>
+<p>&#64;param lon1, lat1: longitude and latitude of the first coordinate.</p>
+<p>&#64;param lon2, lat2: longitude and latitude of the second coordinate.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="data_models.Route.RouteNet.n_edges">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">n_edges</span></span><a class="headerlink" href="#data_models.Route.RouteNet.n_edges" title="Permalink to this definition"></a></dt>
+<dd><p>Number of edges in the network</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="data_models.Route.RouteNet.n_nodes">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">n_nodes</span></span><a class="headerlink" href="#data_models.Route.RouteNet.n_nodes" title="Permalink to this definition"></a></dt>
+<dd><p>Number of nodes in the network</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="data_models.Route.RouteNet.plot_city_gdp_distribution">
+<span class="sig-name descname"><span class="pre">plot_city_gdp_distribution</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bins</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'auto'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#data_models.Route.RouteNet.plot_city_gdp_distribution" title="Permalink to this definition"></a></dt>
+<dd><p>plot the histogram of city gdp distribution.</p>
+<p>&#64;param bins: the number of equal-width bins in the range</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="data_models.Route.RouteNet.plot_city_population_distribution">
+<span class="sig-name descname"><span class="pre">plot_city_population_distribution</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bins</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'auto'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#data_models.Route.RouteNet.plot_city_population_distribution" title="Permalink to this definition"></a></dt>
+<dd><p>plot the histogram of city population distribution.</p>
+<p>&#64;param bins: the number of equal-width bins in the range</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="data_models.Route.RouteNet.plot_degree_ccdf">
+<span class="sig-name descname"><span class="pre">plot_degree_ccdf</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#data_models.Route.RouteNet.plot_degree_ccdf" title="Permalink to this definition"></a></dt>
+<dd><p>plot the Complementary Cumulative Distribution Function in loglog scale</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="data_models.Route.RouteNet.plot_degree_distribution">
+<span class="sig-name descname"><span class="pre">plot_degree_distribution</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#data_models.Route.RouteNet.plot_degree_distribution" title="Permalink to this definition"></a></dt>
+<dd><p>plot the degree distribution using barplot</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="data_models.Route.RouteNet.plot_distance_distribution">
+<span class="sig-name descname"><span class="pre">plot_distance_distribution</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bins</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'auto'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#data_models.Route.RouteNet.plot_distance_distribution" title="Permalink to this definition"></a></dt>
+<dd><p>plot the histogram of route distance distribution.</p>
+<p>&#64;param bins: the number of equal-width bins in the range</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="data_models.Route.RouteNet.plot_frequency_distribution">
+<span class="sig-name descname"><span class="pre">plot_frequency_distribution</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#data_models.Route.RouteNet.plot_frequency_distribution" title="Permalink to this definition"></a></dt>
+<dd><p>plot the Frequency Distribution using barplot</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="data_models.Route.RouteNet.remove_airlines">
+<span class="sig-name descname"><span class="pre">remove_airlines</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">airline_codes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#data_models.Route.RouteNet.remove_airlines" title="Permalink to this definition"></a></dt>
+<dd><p>Rebuild the graph by removing links from the network with matching airline codes.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="data_models.Route.RouteNet.remove_domestic_flights">
+<span class="sig-name descname"><span class="pre">remove_domestic_flights</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#data_models.Route.RouteNet.remove_domestic_flights" title="Permalink to this definition"></a></dt>
+<dd><p>Reduce the graph by removing links with the same origin country and destination country.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="data_models.Route.RouteNet.remove_short_distance_flights">
+<span class="sig-name descname"><span class="pre">remove_short_distance_flights</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">500</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#data_models.Route.RouteNet.remove_short_distance_flights" title="Permalink to this definition"></a></dt>
+<dd><p>Reduce the graph be removing links with distance less than the threshold value.</p>
+<p>&#64;param threshold: distance in miles to be considered short. any links with distance less 
+than this value will be removed. Default 500 miles.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="data_models.Route.RouteNet.transitivity">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">transitivity</span></span><a class="headerlink" href="#data_models.Route.RouteNet.transitivity" title="Permalink to this definition"></a></dt>
+<dd><p>Transitivity / Global clustering coefficient of the network</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-data_models.abstract">
+<span id="data-models-abstract-module"></span><h2>data_models.abstract module<a class="headerlink" href="#module-data_models.abstract" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="data_models.abstract.BaseModel">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">data_models.abstract.</span></span><span class="sig-name descname"><span class="pre">BaseModel</span></span><a class="headerlink" href="#data_models.abstract.BaseModel" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ABC</span></code></p>
+</dd></dl>
+
+</section>
+<section id="module-data_models">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-data_models" title="Permalink to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="connector.html" class="btn btn-neutral float-left" title="connector module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="draw_map.html" class="btn btn-neutral float-right" title="draw_map module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Zixuan Chen, Mujing Wang.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

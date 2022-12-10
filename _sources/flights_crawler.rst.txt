@@ -1,0 +1,7 @@
+flights\_crawler module
+=======================
+
+.. automodule:: flights_crawler
+   :members:
+   :undoc-members:
+   :show-inheritance:

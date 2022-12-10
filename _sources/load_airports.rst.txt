@@ -1,0 +1,7 @@
+load\_airports module
+=====================
+
+.. automodule:: load_airports
+   :members:
+   :undoc-members:
+   :show-inheritance:

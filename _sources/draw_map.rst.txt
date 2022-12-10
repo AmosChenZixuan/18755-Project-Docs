@@ -1,0 +1,7 @@
+draw\_map module
+================
+
+.. automodule:: draw_map
+   :members:
+   :undoc-members:
+   :show-inheritance:
